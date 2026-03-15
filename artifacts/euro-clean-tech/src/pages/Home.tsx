@@ -9,13 +9,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={`${import.meta.env.BASE_URL}images/hero-water-bg.png`}
-            alt="Pure clean water" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/8 via-secondary/5 to-background">
+          {/* Decorative blobs */}
+          <div className="absolute top-10 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-bl from-primary/15 to-secondary/10 blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/3 w-96 h-96 rounded-full bg-secondary/10 blur-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20"></div>
         </div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-8">
@@ -171,8 +169,10 @@ export default function Home() {
 
       {/* CTA Banner */}
       <section className="relative py-20 overflow-hidden bg-primary">
-        <div className="absolute inset-0 opacity-10">
-          <img src={`${import.meta.env.BASE_URL}images/abstract-wave.png`} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-white/5 blur-2xl"></div>
+          <div className="absolute bottom-0 -left-10 w-80 h-80 rounded-full bg-secondary/20 blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-32 bg-white/3 rounded-full blur-3xl"></div>
         </div>
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">

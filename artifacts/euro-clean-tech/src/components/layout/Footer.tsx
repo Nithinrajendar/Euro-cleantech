@@ -11,12 +11,17 @@ export default function Footer() {
           
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="bg-white p-3 rounded-xl inline-block">
-              <img 
-                src={`${import.meta.env.BASE_URL}images/logo.png`} 
-                alt="Euro Clean Tech Logo" 
-                className="h-10 w-auto"
-              />
+            <div className="flex items-center gap-2">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-md">
+                <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-white" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" fill="currentColor" opacity="0.2"/>
+                  <path d="M12 6c0 0-5 4.5-5 8a5 5 0 0 0 10 0c0-3.5-5-8-5-8z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div className="leading-tight">
+                <span className="block text-white font-bold text-base">Euro Clean</span>
+                <span className="block text-secondary font-semibold text-xs tracking-widest uppercase">Tech</span>
+              </div>
             </div>
             <p className="text-sm leading-relaxed text-white/70">
               Coimbatore's most trusted professional water tank cleaning and mechanized housekeeping service providers since 2010. Serving homes, apartments, and industries.

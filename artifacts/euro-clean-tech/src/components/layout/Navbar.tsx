@@ -57,12 +57,19 @@ export default function Navbar() {
 
       {/* Main Nav */}
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <img 
-            src={`${import.meta.env.BASE_URL}images/logo.png`} 
-            alt="Euro Clean Tech Logo" 
-            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-          />
+        <Link href="/" className="flex items-center gap-2 group transition-transform duration-300 group-hover:scale-105">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-md shadow-primary/25">
+              <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-white" stroke="currentColor" strokeWidth="2">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" fill="currentColor" opacity="0.2"/>
+                <path d="M12 6c0 0-5 4.5-5 8a5 5 0 0 0 10 0c0-3.5-5-8-5-8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div className="leading-tight">
+              <span className="block text-primary font-bold text-base">Euro Clean</span>
+              <span className="block text-secondary font-semibold text-xs tracking-widest uppercase">Tech</span>
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -99,12 +106,17 @@ export default function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[350px] bg-white border-l-0">
             <div className="flex flex-col h-full mt-6">
-              <div className="mb-8">
-                <img 
-                  src={`${import.meta.env.BASE_URL}images/logo.png`} 
-                  alt="Euro Clean Tech Logo" 
-                  className="h-10 w-auto"
-                />
+              <div className="mb-8 flex items-center gap-2">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-md shadow-primary/25">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-white" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" fill="currentColor" opacity="0.2"/>
+                    <path d="M12 6c0 0-5 4.5-5 8a5 5 0 0 0 10 0c0-3.5-5-8-5-8z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div className="leading-tight">
+                  <span className="block text-primary font-bold text-base">Euro Clean</span>
+                  <span className="block text-secondary font-semibold text-xs tracking-widest uppercase">Tech</span>
+                </div>
               </div>
               <nav className="flex flex-col gap-2">
                 {NAV_LINKS.map((link) => {

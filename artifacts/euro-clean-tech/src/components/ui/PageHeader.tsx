@@ -6,19 +6,15 @@ interface PageHeaderProps {
   imagePath?: string;
 }
 
-export function PageHeader({ title, description, imagePath }: PageHeaderProps) {
-  const defaultBg = `${import.meta.env.BASE_URL}images/abstract-wave.png`;
-  
+export function PageHeader({ title, description }: PageHeaderProps) {
   return (
-    <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-primary/5">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={imagePath || defaultBg} 
-          alt="Header Background" 
-          className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-background/50 to-background"></div>
+    <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      {/* CSS gradient background — no external image needed */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-background">
+        {/* Decorative circles */}
+        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl"></div>
+        <div className="absolute bottom-0 -left-10 w-64 h-64 rounded-full bg-secondary/10 blur-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background"></div>
       </div>
 
       <div className="container relative z-10 mx-auto px-4 text-center">
