@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Euro Clean Tech"
+version = "1.0.0"
+id = "artifacts/euro-clean-tech"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 19772
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/euro-clean-tech run dev"
+
+[services.env]
+PORT = "19772"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/euro-clean-tech", "run", "build"]
+publicDir = "artifacts/euro-clean-tech/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

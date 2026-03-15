@@ -1,0 +1,20 @@
+packages:
+  "framer-motion": "For page transitions and scroll-triggered animations to make the site feel premium"
+  "react-hook-form": "For robust contact form handling"
+  "@hookform/resolvers": "For Zod integration with the contact form"
+  "zod": "For contact form schema validation"
+
+images:
+  - path: "artifacts/euro-clean-tech/public/images/logo.png"
+    description: "Clean, professional, minimalist logo for 'Euro Clean Tech', a water tank cleaning company. Incorporates a subtle water drop or wave motif in deep blue and vibrant cyan. Transparent background."
+    aspect_ratio: "3:1"
+  - path: "artifacts/euro-clean-tech/public/images/hero-water-bg.png"
+    description: "Abstract, high-quality photograph of incredibly clean, crystal clear blue water surface with gentle ripples and soft sunlight reflections. Professional, reassuring, pure, high resolution."
+    aspect_ratio: "16:9"
+  - path: "artifacts/euro-clean-tech/public/images/abstract-wave.png"
+    description: "Subtle, smooth, modern abstract 3D wave graphic in soft light blues and whites. Used as a decorative background element for sections. Clean, sterile, tech-forward."
+    aspect_ratio: "16:9"
+
+notes:
+  - Completely static multi-page frontend as requested.
+  - Contact form simulates submission using a fake delay and shows a success toast.
