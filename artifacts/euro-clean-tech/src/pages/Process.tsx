@@ -1,99 +1,147 @@
-import { PageHeader } from "@/components/ui/PageHeader";
+import { Helmet } from 'react-helmet-async';
 import { motion } from "framer-motion";
-import { Search, Waves, Trash2, Droplets, Wind, ShieldPlus, Sun } from "lucide-react";
+import { Search, Waves, Trash2, Droplets, Wind, ShieldPlus, Sun, ArrowRight } from "lucide-react";
 
 const STEPS = [
   {
     title: "Mechanized Dewatering",
-    icon: <Waves className="w-6 h-6" />,
+    icon: <Waves className="w-8 h-8" />,
     desc: "We use heavy-duty submersible pumps to drain out the existing water and loose dirt rapidly, minimizing wastage of time.",
   },
   {
     title: "Sludge Removal",
-    icon: <Trash2 className="w-6 h-6" />,
+    icon: <Trash2 className="w-8 h-8" />,
     desc: "Specialized sludge pumps extract deep-seated mud, sand, and heavy residues from the bottom of the tank.",
   },
   {
     title: "High Pressure Jet Cleaning",
-    icon: <Droplets className="w-6 h-6" />,
+    icon: <Droplets className="w-8 h-8" />,
     desc: "The walls and ceiling are blasted with a 150-bar high-pressure water jet. This strips away hard scale, algae, and calcification.",
   },
   {
     title: "Vacuum Cleaning",
-    icon: <Wind className="w-6 h-6" />,
+    icon: <Wind className="w-8 h-8" />,
     desc: "An industrial wet-and-dry vacuum cleaner is used to suck out the final traces of dirt and dirty water, leaving the tank totally dry.",
   },
   {
     title: "Anti-Bacterial Spray",
-    icon: <ShieldPlus className="w-6 h-6" />,
+    icon: <ShieldPlus className="w-8 h-8" />,
     desc: "We spray a completely safe, non-toxic, bio-degradable anti-bacterial agent onto the inner walls to kill any remaining pathogens.",
   },
   {
     title: "UV Sterilization",
-    icon: <Sun className="w-6 h-6" />,
+    icon: <Sun className="w-8 h-8" />,
     desc: "A specially developed UV radiator is used to irradiate the tank. This final step kills suspended floating spores and guarantees 100% sterilization.",
   },
 ];
 
 export default function Process() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <PageHeader 
-        title="Our 7-Step Cleaning Process" 
-        description="A completely scientific, mechanized approach ensuring your water tank is 100% bacteria-free."
-      />
+    <div className="flex flex-col min-h-screen bg-background">
+      <Helmet>
+        <title>7-Step Tank Cleaning Process – Chemical Free | Euro Clean Tech</title>
+        <meta name="description" content="Our scientific 7-step water tank cleaning process: inspection, dewatering, sludge removal, high-pressure jetting, vacuum cleaning, anti-bacterial spray, UV sterilization." />
+        <link rel="canonical" href="https://www.eurocleantech.in/process" />
+      </Helmet>
 
-      <section className="py-20 overflow-hidden">
-        <div className="container mx-auto px-4 max-w-5xl">
+      {/* Hero Section */}
+      <section className="pt-40 pb-20 bg-primary text-white overflow-hidden relative">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+        <div className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-4xl">
+          <div className="inline-block px-4 py-1.5 bg-secondary text-white rounded-full text-sm font-bold tracking-wider mb-6">
+            100% SCIENTIFIC
+          </div>
+          <h1 className="text-5xl md:text-6xl font-display font-black mb-6 drop-shadow-md">
+            Our 7-Step Cleaning Process
+          </h1>
+          <p className="text-xl text-white/80 leading-relaxed font-medium">
+            A completely mechanized approach ensuring your water tank is bacteria-free without the use of harmful chemicals.
+          </p>
+        </div>
+        
+        {/* Wave divider at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 translate-y-px">
+          <svg viewBox="0 0 1440 120" className="w-full h-12 md:h-16 text-background fill-current" preserveAspectRatio="none">
+            <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+          </svg>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container mx-auto px-4 md:px-8 max-w-5xl">
           
-          {/* Step 1: Inspection (Special highlighted step) */}
+          {/* Step 1: Special highlighted step */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary text-white rounded-3xl p-8 md:p-12 mb-16 shadow-xl relative"
+            className="bg-white rounded-[40px] p-8 md:p-14 mb-24 shadow-2xl border border-border/50 relative overflow-hidden group"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-10">
-              <Search className="w-40 h-40" />
-            </div>
-            <div className="relative z-10">
-              <div className="inline-block px-4 py-1.5 bg-white/20 rounded-full text-sm font-bold tracking-wider mb-6">
-                STEP 01
+            {/* Background Blob */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none transition-transform duration-700 group-hover:scale-150"></div>
+            
+            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[32px] bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+                <Search className="w-16 h-16 md:w-20 md:h-20" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Tank Inspection</h2>
-              <p className="text-white/90 text-lg max-w-2xl leading-relaxed">
-                Before beginning, our technicians inspect the surroundings, check the tank's condition, identify cracks or leaks, and determine the exact machinery and pressure required for your specific tank material.
-              </p>
+              <div>
+                <div className="inline-block px-4 py-1.5 bg-muted text-foreground rounded-full text-sm font-bold tracking-wider mb-4 border border-border">
+                  STEP 01
+                </div>
+                <h2 className="text-3xl md:text-5xl font-display font-black text-foreground mb-4">Site Inspection</h2>
+                <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+                  Before beginning, our technicians thoroughly inspect the surroundings, check the tank's condition, identify cracks or leaks, and determine the exact machinery and pressure required for your specific tank material.
+                </p>
+              </div>
             </div>
           </motion.div>
 
           {/* Timeline Steps 2-7 */}
-          <div className="relative border-l-4 border-primary/20 ml-6 md:ml-12 space-y-16 py-8">
-            {STEPS.map((step, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative pl-10 md:pl-16"
-              >
-                {/* Timeline Dot */}
-                <div className="absolute -left-[34px] md:-left-[34px] top-0 w-16 h-16 rounded-full bg-white border-4 border-primary flex items-center justify-center shadow-lg text-primary z-10">
-                  {step.icon}
-                </div>
+          <div className="relative">
+            {/* Desktop Center Line */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-border/50 -translate-x-1/2"></div>
+            {/* Mobile Left Line */}
+            <div className="md:hidden absolute left-8 top-0 bottom-0 w-1 bg-border/50"></div>
 
-                <div className="bg-white p-8 rounded-2xl shadow-lg border border-border/50 hover:shadow-xl transition-shadow group">
-                  <div className="text-secondary font-bold mb-2">STEP 0{index + 2}</div>
-                  <h3 className="text-2xl font-display font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            <div className="space-y-16 md:space-y-24">
+              {STEPS.map((step, index) => {
+                const isEven = index % 2 === 0;
+                return (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className={`relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''}`}
+                  >
+                    {/* Center Icon Node */}
+                    <div className="absolute left-8 md:left-1/2 w-16 h-16 rounded-2xl bg-white border-4 border-primary flex items-center justify-center shadow-xl text-primary z-20 md:-translate-x-1/2 -translate-x-1/2 group">
+                      <div className="group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
+                        {step.icon}
+                      </div>
+                    </div>
+
+                    {/* Content Card */}
+                    <div className={`w-full md:w-1/2 pl-24 md:pl-0 ${isEven ? 'md:pr-16 text-left md:text-right' : 'md:pl-16 text-left'}`}>
+                      <div className="bg-muted/30 p-8 rounded-3xl border border-border/50 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                        <div className={`text-secondary font-bold text-lg mb-3 ${isEven ? 'md:text-right' : ''}`}>
+                          STEP 0{index + 2}
+                        </div>
+                        <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                          {step.title}
+                        </h3>
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
 
         </div>
