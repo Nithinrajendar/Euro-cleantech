@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from "framer-motion";
-import { Search, Waves, Trash2, Droplets, Wind, ShieldPlus, Sun, ArrowRight } from "lucide-react";
+import { Search, Waves, Trash2, Droplets, Wind, ShieldPlus, Sun } from "lucide-react";
 
 const STEPS = [
   {
@@ -60,7 +59,7 @@ export default function Process() {
             A completely mechanized approach ensuring your water tank is bacteria-free without the use of harmful chemicals.
           </p>
         </div>
-        
+
         {/* Wave divider at bottom */}
         <div className="absolute bottom-0 left-0 right-0 z-20 translate-y-px">
           <svg viewBox="0 0 1440 120" className="w-full h-12 md:h-16 text-background fill-current" preserveAspectRatio="none">
@@ -71,19 +70,13 @@ export default function Process() {
 
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-8 max-w-5xl">
-          
+
           {/* Step 1: Special highlighted step */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-[40px] p-8 md:p-14 mb-24 shadow-2xl border border-border/50 relative overflow-hidden group"
-          >
-            {/* Background Blob */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none transition-transform duration-700 group-hover:scale-150"></div>
-            
+          <div className="bg-white rounded-[40px] p-8 md:p-14 mb-24 shadow-2xl border border-border/50 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
             <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[32px] bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30 transform -rotate-6 group-hover:rotate-0 transition-transform duration-500">
+              <div className="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-[32px] bg-primary text-white flex items-center justify-center shadow-lg shadow-primary/30">
                 <Search className="w-16 h-16 md:w-20 md:h-20" />
               </div>
               <div>
@@ -96,7 +89,7 @@ export default function Process() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Timeline Steps 2-7 */}
           <div className="relative">
@@ -109,19 +102,13 @@ export default function Process() {
               {STEPS.map((step, index) => {
                 const isEven = index % 2 === 0;
                 return (
-                  <motion.div 
+                  <div
                     key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
                     className={`relative flex flex-col md:flex-row items-center ${isEven ? 'md:flex-row-reverse' : ''}`}
                   >
                     {/* Center Icon Node */}
-                    <div className="absolute left-8 md:left-1/2 w-16 h-16 rounded-2xl bg-white border-4 border-primary flex items-center justify-center shadow-xl text-primary z-20 md:-translate-x-1/2 -translate-x-1/2 group">
-                      <div className="group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300">
-                        {step.icon}
-                      </div>
+                    <div className="absolute left-8 md:left-1/2 w-16 h-16 rounded-2xl bg-white border-4 border-primary flex items-center justify-center shadow-xl text-primary z-20 md:-translate-x-1/2 -translate-x-1/2">
+                      {step.icon}
                     </div>
 
                     {/* Content Card */}
@@ -138,7 +125,7 @@ export default function Process() {
                         </p>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>

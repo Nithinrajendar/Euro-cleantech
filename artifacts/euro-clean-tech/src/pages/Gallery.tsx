@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Helmet } from 'react-helmet-async';
-import { motion, AnimatePresence } from "framer-motion";
 
 const CATEGORIES = ["All", "Tank Cleaning", "Process", "Results"];
 
@@ -16,8 +15,8 @@ const IMAGES = [
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const filteredImages = activeCategory === "All" 
-    ? IMAGES 
+  const filteredImages = activeCategory === "All"
+    ? IMAGES
     : IMAGES.filter(img => img.category === activeCategory);
 
   return (
@@ -46,7 +45,7 @@ export default function Gallery() {
 
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-8">
-          
+
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-3 mb-16">
             {CATEGORIES.map(category => (
@@ -64,12 +63,12 @@ export default function Gallery() {
             ))}
           </div>
 
-          {/* Before/After Highlight (Always visible) */}
+          {/* Before/After Highlight */}
           {activeCategory === "All" && (
             <div className="mb-20 bg-white rounded-[40px] p-8 md:p-12 shadow-2xl border border-border/50">
               <div className="text-center mb-10">
                 <h3 className="text-3xl font-display font-bold">The Euro Clean Tech Difference</h3>
-                <p className="text-muted-foreground mt-2">Swipe to see the transformation (Representative)</p>
+                <p className="text-muted-foreground mt-2">See the transformation (Representative)</p>
               </div>
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Before */}
@@ -88,46 +87,38 @@ export default function Gallery() {
             </div>
           )}
 
-          {/* Masonry-style Grid */}
-          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AnimatePresence>
-              {filteredImages.map((img) => (
-                <motion.div 
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  key={img.id}
-                  className={`group relative h-80 rounded-3xl overflow-hidden shadow-lg cursor-pointer ${img.color} flex items-center justify-center border border-border/50`}
-                >
-                  {/* Placeholder Content since no images */}
-                  <div className="text-center p-6 text-foreground/40 font-display font-bold text-xl group-hover:scale-110 transition-transform duration-500">
-                    Image: {img.title}
-                  </div>
-                  
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <span className="inline-block px-3 py-1 bg-secondary text-white text-xs font-bold uppercase tracking-wider rounded-full mb-3">
-                      {img.category}
-                    </span>
-                    <h3 className="text-white text-2xl font-bold font-display leading-tight">
-                      {img.title}
-                    </h3>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-          
+          {/* Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredImages.map((img) => (
+              <div
+                key={img.id}
+                className={`group relative h-80 rounded-3xl overflow-hidden shadow-lg cursor-pointer ${img.color} flex items-center justify-center border border-border/50`}
+              >
+                <div className="text-center p-6 text-foreground/40 font-display font-bold text-xl">
+                  Image: {img.title}
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="inline-block px-3 py-1 bg-secondary text-white text-xs font-bold uppercase tracking-wider rounded-full mb-3">
+                    {img.category}
+                  </span>
+                  <h3 className="text-white text-2xl font-bold font-display leading-tight">
+                    {img.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div className="mt-20 text-center bg-primary/5 rounded-[32px] p-10 border border-primary/10">
             <h3 className="text-2xl font-display font-bold text-foreground mb-4">Want to see real photos of our work?</h3>
             <p className="text-muted-foreground mb-8 text-lg">We regularly post our daily transformations and process videos on WhatsApp.</p>
-            <a 
-              href="https://wa.me/919655933484" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://wa.me/919655933484"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-14 px-8 rounded-2xl bg-[#25D366] text-white font-bold text-lg hover:shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:-translate-y-1 transition-all"
             >
               Request Photos on WhatsApp

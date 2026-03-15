@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from "wouter";
-import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Phone, Droplets, ShieldCheck, Clock, MapPin, Star, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,157 +16,101 @@ export default function Home() {
         <link rel="canonical" href="https://www.eurocleantech.in/" />
       </Helmet>
 
-      {/* NEW LIGHT HERO */}
+      {/* HERO */}
       <section className="relative min-h-[95vh] flex flex-col justify-center pt-32 lg:pt-40 overflow-hidden bg-white">
-        {/* Background Elements */}
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/40 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 z-0 pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 z-0 pointer-events-none"></div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-8 flex-grow flex items-center">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center w-full">
-            
+
             {/* Left Content */}
             <div className="max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold mb-8 shadow-sm">
-                  <ShieldCheck className="w-5 h-5 text-secondary" />
-                  <span className="text-sm">Trusted Since 2010 · Coimbatore's #1</span>
-                </div>
-                
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black leading-[1.1] text-foreground mb-6">
-                  Professional <br className="hidden md:block" />
-                  Water Tank Cleaning <br className="hidden md:block" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">in Coimbatore</span>
-                </h1>
-                
-                <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-xl font-medium">
-                  Mechanized, 7-step scientific cleaning process without harmful chemicals. Keep your family safe with our imported equipment and expert technicians.
-                </p>
-                
-                <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-                  <Button asChild size="lg" className="h-14 px-8 text-lg rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
-                    <a href="tel:9655933484">
-                      <Phone className="mr-2 w-5 h-5" /> Call Now
-                    </a>
-                  </Button>
-                  <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg rounded-2xl border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white shadow-lg shadow-[#25D366]/10 hover:-translate-y-1 transition-all">
-                    <a href="https://wa.me/919655933484" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="mr-2 w-5 h-5" /> WhatsApp
-                    </a>
-                  </Button>
-                  <Button asChild size="lg" variant="ghost" className="h-14 px-8 text-lg rounded-2xl text-foreground hover:bg-muted font-bold hover:-translate-y-1 transition-all">
-                    <Link href="/contact">Get Free Quote <ArrowRight className="ml-2 w-5 h-5" /></Link>
-                  </Button>
-                </div>
-              </motion.div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold mb-8 shadow-sm">
+                <ShieldCheck className="w-5 h-5 text-secondary" />
+                <span className="text-sm">Trusted Since 2010 · Coimbatore's #1</span>
+              </div>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black leading-[1.1] text-foreground mb-6">
+                Professional <br className="hidden md:block" />
+                Water Tank Cleaning <br className="hidden md:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">in Coimbatore</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-xl font-medium">
+                Mechanized, 7-step scientific cleaning process without harmful chemicals. Keep your family safe with our imported equipment and expert technicians.
+              </p>
+
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+                <Button asChild size="lg" className="h-14 px-8 text-lg rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
+                  <a href="tel:9655933484">
+                    <Phone className="mr-2 w-5 h-5" /> Call Now
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="h-14 px-8 text-lg rounded-2xl border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white shadow-lg shadow-[#25D366]/10 hover:-translate-y-1 transition-all">
+                  <a href="https://wa.me/919655933484" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="mr-2 w-5 h-5" /> WhatsApp
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="ghost" className="h-14 px-8 text-lg rounded-2xl text-foreground hover:bg-muted font-bold hover:-translate-y-1 transition-all">
+                  <Link href="/contact">Get Free Quote <ArrowRight className="ml-2 w-5 h-5" /></Link>
+                </Button>
+              </div>
             </div>
 
-            {/* Right Content - CSS/SVG Illustration */}
+            {/* Right Content - Static Illustration */}
             <div className="relative flex justify-center items-center h-[500px] mt-10 lg:mt-0">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="relative z-10 w-full max-w-[500px] h-full flex items-center justify-center"
-              >
-                {/* Stylized Tank Cross-section */}
+              <div className="relative z-10 w-full max-w-[500px] h-full flex items-center justify-center">
+                {/* Tank Cross-section */}
                 <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-[40px] bg-white border-[8px] border-muted shadow-2xl overflow-hidden flex flex-col justify-end">
-                  
-                  {/* Inside Tank Background */}
+
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-accent/30 pointer-events-none"></div>
-                  
-                  {/* Animated Water Level */}
-                  <motion.div 
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative w-full h-[60%] bg-gradient-to-b from-primary/80 to-secondary/80 rounded-b-[32px] overflow-hidden"
-                  >
-                    {/* Water ripples */}
+
+                  {/* Static Water Level */}
+                  <div className="relative w-full h-[60%] bg-gradient-to-b from-primary/80 to-secondary/80 rounded-b-[32px] overflow-hidden">
                     <div className="absolute top-0 left-0 right-0 h-4 bg-white/20 rounded-full blur-sm transform -translate-y-2"></div>
                     <div className="absolute top-4 left-4 right-4 h-2 bg-white/10 rounded-full blur-sm"></div>
-                    
-                    {/* Bubbles */}
-                    {[...Array(5)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-3 h-3 rounded-full bg-white/30"
-                        animate={{ y: [100, -20], opacity: [0, 1, 0] }}
-                        transition={{
-                          duration: 2 + Math.random() * 2,
-                          repeat: Infinity,
-                          delay: Math.random() * 2,
-                          ease: "easeOut"
-                        }}
-                        style={{ left: `${20 + Math.random() * 60}%`, bottom: 0 }}
-                      />
-                    ))}
-                  </motion.div>
-                  
-                  {/* Cleaning Wand Illustration */}
-                  <motion.div 
-                    animate={{ x: [-20, 20, -20], rotate: [-5, 5, -5] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-10 left-1/2 -translate-x-1/2 w-8 h-40 bg-foreground rounded-full flex flex-col items-center z-10"
-                  >
+                  </div>
+
+                  {/* Static Cleaning Wand */}
+                  <div className="absolute top-10 left-1/2 -translate-x-1/2 w-8 h-40 bg-foreground rounded-full flex flex-col items-center z-10">
                     <div className="w-12 h-4 bg-secondary rounded-t-lg"></div>
                     <div className="flex-grow w-2 bg-muted-foreground/30"></div>
                     <div className="w-10 h-8 bg-primary rounded-b-lg relative">
-                      {/* Spray */}
-                      <motion.div 
-                        animate={{ height: [20, 40, 20], opacity: [0.5, 0.8, 0.5] }}
-                        transition={{ duration: 0.5, repeat: Infinity }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 w-20 bg-gradient-to-b from-white to-transparent blur-sm rounded-b-full"
-                        style={{ transformOrigin: "top center" }}
-                      ></motion.div>
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-20 h-8 bg-gradient-to-b from-white to-transparent blur-sm rounded-b-full opacity-60"></div>
                     </div>
-                  </motion.div>
+                  </div>
 
                 </div>
 
-                {/* Floating Badges */}
-                <motion.div
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute top-10 -left-8 md:-left-16 z-20 px-5 py-3 rounded-2xl bg-white shadow-xl border border-border/50 flex items-center gap-3"
-                >
+                {/* Static Floating Badges */}
+                <div className="absolute top-10 -left-8 md:-left-16 z-20 px-5 py-3 rounded-2xl bg-white shadow-xl border border-border/50 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
                     <CheckCircle2 className="w-5 h-5 text-green-600" />
                   </div>
                   <span className="font-bold text-foreground">No Chemicals</span>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute bottom-20 -right-8 md:-right-16 z-20 px-5 py-3 rounded-2xl bg-white shadow-xl border border-border/50 flex items-center gap-3"
-                >
+                <div className="absolute bottom-20 -right-8 md:-right-16 z-20 px-5 py-3 rounded-2xl bg-white shadow-xl border border-border/50 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
                     <ShieldCheck className="w-5 h-5 text-blue-600" />
                   </div>
                   <span className="font-bold text-foreground">UV Sterilized</span>
-                </motion.div>
-                
-                <motion.div
-                  animate={{ y: [-5, 5, -5] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                  className="absolute -top-4 right-0 z-20 px-5 py-3 rounded-2xl bg-white shadow-xl border border-border/50 flex items-center gap-3"
-                >
+                </div>
+
+                <div className="absolute -top-4 right-0 z-20 px-5 py-3 rounded-2xl bg-white shadow-xl border border-border/50 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center">
                     <Star className="w-5 h-5 text-amber-600 fill-amber-600" />
                   </div>
                   <span className="font-bold text-foreground">ISO Certified</span>
-                </motion.div>
+                </div>
 
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Wave divider at bottom of hero */}
+        {/* Wave divider */}
         <div className="absolute bottom-0 left-0 right-0 z-20 translate-y-px">
           <svg viewBox="0 0 1440 120" className="w-full h-12 md:h-24 text-primary fill-current" preserveAspectRatio="none">
             <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
@@ -185,17 +128,10 @@ export default function Home() {
               { number: "100%", label: "Safe Chemicals" },
               { number: "24/7", label: "Support Available" },
             ].map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="text-center"
-              >
+              <div key={i} className="text-center">
                 <div className="text-4xl md:text-5xl font-black font-display text-white mb-2 tracking-tight">{stat.number}</div>
                 <div className="text-sm md:text-base text-accent font-semibold uppercase tracking-wider">{stat.label}</div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -205,14 +141,9 @@ export default function Home() {
       <section className="py-24 bg-muted/50 overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Left: CSS Illustration */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative aspect-square md:aspect-[4/3] rounded-[40px] bg-gradient-to-br from-primary to-secondary p-1 overflow-hidden shadow-2xl"
-            >
+            <div className="relative aspect-square md:aspect-[4/3] rounded-[40px] bg-gradient-to-br from-primary to-secondary p-1 overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYyMCIvPjwvc3ZnPg==')] opacity-30"></div>
               <div className="absolute inset-2 rounded-[32px] bg-white flex flex-col items-center justify-center p-8 text-center">
                 <div className="w-24 h-24 rounded-full bg-accent flex items-center justify-center mb-6 shadow-inner">
@@ -224,11 +155,11 @@ export default function Home() {
                 </p>
                 <div className="mt-8 flex gap-2">
                   {[...Array(3)].map((_, i) => (
-                    <div key={i} className="w-3 h-3 rounded-full bg-primary/20 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
+                    <div key={i} className="w-3 h-3 rounded-full bg-primary/20"></div>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Right: Text & Bullets */}
             <div>
@@ -239,7 +170,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Health begins with <br/><span className="text-primary">pure water.</span>
               </h2>
-              
+
               <div className="space-y-6">
                 {[
                   {
@@ -263,12 +194,8 @@ export default function Home() {
                     desc: "We don't leave until your tank is visibly spotless and scientifically sterilized."
                   }
                 ].map((feature, i) => (
-                  <motion.div 
+                  <div
                     key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
                     className="flex gap-4 p-4 rounded-2xl hover:bg-white transition-colors border border-transparent hover:border-border shadow-sm hover:shadow-md"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-primary/20">
@@ -278,7 +205,7 @@ export default function Home() {
                       <h4 className="text-xl font-bold text-foreground mb-1">{feature.title}</h4>
                       <p className="text-muted-foreground leading-relaxed">{feature.desc}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -299,7 +226,7 @@ export default function Home() {
             </div>
             <Button asChild variant="outline" className="group rounded-full font-bold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
               <Link href="/services">
-                View All Services 
+                View All Services
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -314,7 +241,7 @@ export default function Home() {
             ].map((service, i) => (
               <Link key={i} href="/services">
                 <Card className="h-full group border-0 bg-muted/30 hover:bg-white transition-all duration-300 shadow-none hover:shadow-xl hover:-translate-y-2 overflow-hidden relative">
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300`}></div>
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                   <CardContent className="p-8 relative">
                     <div className="text-6xl font-black font-display text-muted-foreground/10 absolute top-4 right-4 z-0 group-hover:text-primary/5 transition-colors">
                       {service.id}
@@ -334,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICE AREAS (Map-like visual) */}
+      {/* SERVICE AREAS */}
       <section className="py-24 bg-foreground text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-foreground to-foreground z-0"></div>
         <div className="container relative z-10 mx-auto px-4 md:px-8 text-center">
@@ -343,20 +270,16 @@ export default function Home() {
             <div className="h-1 w-full bg-accent mt-1 rounded-full"></div>
           </div>
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-16">Serving Across Tamil Nadu</h2>
-          
+
           <div className="flex flex-wrap justify-center gap-6 md:gap-12">
-            {["Coimbatore", "Tirupur", "Trichy", "Mettupalayam"].map((city, i) => (
-              <motion.div 
+            {["Coimbatore", "Tirupur", "Trichy", "Mettupalayam"].map((city) => (
+              <div
                 key={city}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
                 className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/20 shadow-xl hover:bg-white/20 transition-colors"
               >
                 <MapPin className="w-6 h-6 text-secondary" />
                 <span className="text-xl font-bold font-display">{city}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -373,7 +296,6 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">Loved by 10,000+ Homes</h2>
           </div>
 
-          {/* Horizontal scroll on mobile, grid on desktop */}
           <div className="flex overflow-x-auto pb-8 -mx-4 px-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0 md:px-0 gap-6 snap-x">
             {[
               { name: "Ramesh Kumar", loc: "Coimbatore", text: "Extremely professional service. The UV sterilization step gave us complete peace of mind." },
@@ -401,7 +323,7 @@ export default function Home() {
               </Card>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center">
             <Button asChild variant="ghost" className="font-bold text-primary hover:bg-primary/5">
               <Link href="/testimonials">Read All Reviews <ArrowRight className="ml-2 w-4 h-4" /></Link>
@@ -412,28 +334,27 @@ export default function Home() {
 
       {/* CTA BANNER */}
       <section className="relative py-24 bg-gradient-to-br from-primary to-secondary overflow-hidden">
-        {/* Wave Divider Top */}
         <div className="absolute top-0 left-0 right-0 z-20 -translate-y-px">
           <svg viewBox="0 0 1440 120" className="w-full h-12 text-white fill-current rotate-180" preserveAspectRatio="none">
             <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
           </svg>
         </div>
 
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmZmZmYyMCIvPjwvc3ZnPg==')] opacity-20"></div>
-
-        <div className="container relative z-10 mx-auto px-4 text-center mt-8">
+        <div className="container relative z-10 mx-auto px-4 md:px-8 text-center">
           <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 drop-shadow-md">
-            Ready for a cleaner, safer home?
+            Ready for Pure, Clean Water?
           </h2>
-          <p className="text-white/90 text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-medium">
-            Book our professional tank cleaning service today. Quick, safe, and 100% effective.
+          <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto font-medium">
+            Don't wait until your family gets sick. Schedule a professional tank cleaning today.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg" className="h-16 px-10 text-xl font-bold rounded-2xl bg-white text-primary hover:bg-gray-100 shadow-2xl hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] hover:-translate-y-2 transition-all">
-              <Link href="/contact">Book an Inspection</Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild size="lg" className="h-16 px-10 text-xl font-bold rounded-2xl bg-white text-primary hover:bg-white/90 shadow-2xl hover:-translate-y-1 transition-all border-0">
+              <a href="tel:9655933484">
+                <Phone className="mr-2 w-6 h-6" /> Call 9655933484
+              </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="h-16 px-10 text-xl font-bold rounded-2xl bg-transparent border-2 border-white text-white hover:bg-white/10 shadow-lg hover:-translate-y-2 transition-all">
-              <a href="tel:9655933484"><Phone className="mr-2 w-6 h-6" /> Call Us Directly</a>
+            <Button asChild size="lg" variant="outline" className="h-16 px-10 text-xl font-bold rounded-2xl border-2 border-white text-white hover:bg-white hover:text-primary shadow-xl hover:-translate-y-1 transition-all">
+              <Link href="/contact">Book Online</Link>
             </Button>
           </div>
         </div>

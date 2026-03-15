@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import { motion } from "framer-motion";
 import { CheckCircle2, ShieldCheck, Target, Heart, Award, Users } from "lucide-react";
 
 export default function About() {
@@ -15,13 +14,9 @@ export default function About() {
       <section className="pt-36 lg:pt-48 pb-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            
+
             {/* Left Text */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+            <div>
               <div className="inline-block mb-4">
                 <span className="text-secondary font-bold tracking-widest uppercase text-sm">Our Story</span>
                 <div className="h-1 w-1/2 bg-secondary mt-1 rounded-full"></div>
@@ -29,7 +24,7 @@ export default function About() {
               <h1 className="text-5xl md:text-6xl font-display font-black text-foreground mb-8 leading-[1.1]">
                 Pioneering <span className="text-primary">Hygiene Solutions</span> since 2010.
               </h1>
-              
+
               <div className="space-y-6 text-xl text-muted-foreground leading-relaxed font-medium">
                 <p>
                   Established in Coimbatore, Euro Clean Tech was born out of a critical necessity: the realization that traditional, manual water tank cleaning methods were unscientific, unsafe, and largely ineffective.
@@ -52,26 +47,17 @@ export default function About() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Right Illustration (CSS Only) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[500px] flex items-center justify-center"
-            >
+            <div className="relative h-[500px] flex items-center justify-center">
               <div className="absolute inset-0 bg-primary/5 rounded-[40px] transform rotate-3"></div>
               <div className="absolute inset-0 bg-secondary/10 rounded-[40px] transform -rotate-3"></div>
-              
+
               <div className="relative z-10 w-full h-full bg-white rounded-[40px] shadow-2xl border border-border/50 p-8 flex flex-col items-center justify-center overflow-hidden">
-                {/* Abstract Corporate/Team Visual */}
                 <div className="w-48 h-48 rounded-full bg-gradient-to-tr from-primary to-blue-300 relative mb-12 shadow-xl">
-                  {/* Surrounding orbit rings */}
-                  <div className="absolute inset-[-40px] border-2 border-dashed border-secondary/30 rounded-full animate-[spin_20s_linear_infinite]"></div>
                   <div className="absolute inset-[-80px] border border-primary/20 rounded-full"></div>
-                  
-                  {/* Floating icons */}
+
                   <div className="absolute top-0 right-0 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transform translate-x-1/2 -translate-y-1/2">
                     <Award className="w-8 h-8 text-secondary" />
                   </div>
@@ -79,11 +65,11 @@ export default function About() {
                     <ShieldCheck className="w-8 h-8 text-primary" />
                   </div>
                 </div>
-                
+
                 <h3 className="text-3xl font-display font-black text-center text-foreground mt-4">15+ Years of Excellence</h3>
                 <p className="text-center text-muted-foreground mt-2 font-medium">Trusted across Tamil Nadu</p>
               </div>
-            </motion.div>
+            </div>
 
           </div>
         </div>
@@ -112,7 +98,7 @@ export default function About() {
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
-            
+
             {/* Mission */}
             <div className="bg-white p-10 md:p-14 rounded-[40px] shadow-xl border border-border/50 hover:shadow-2xl transition-shadow relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
@@ -124,10 +110,10 @@ export default function About() {
                 To provide scientific, mechanized hygiene solutions that ensure access to pure, safe water storage for every household and industry, while maintaining environmental sustainability and utilizing zero harmful chemicals.
               </p>
             </div>
-            
+
             {/* Vision */}
-            <div className="bg-gradient-to-br from-primary to-secondary p-10 md:p-14 rounded-[40px] shadow-xl text-white relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+            <div className="bg-gradient-to-br from-primary to-secondary p-10 md:p-14 rounded-[40px] shadow-xl text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
               <div className="w-20 h-20 rounded-3xl bg-white/20 flex items-center justify-center text-white mb-8 relative z-10 backdrop-blur-sm">
                 <Users className="w-10 h-10" />
               </div>
