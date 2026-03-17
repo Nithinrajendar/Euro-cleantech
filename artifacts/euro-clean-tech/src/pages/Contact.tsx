@@ -54,8 +54,17 @@ export default function Contact() {
       </Helmet>
 
       {/* Header */}
-      <section className="pt-40 pb-16 bg-muted/30 border-b border-border/50 text-center">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="pt-40 pb-20 text-center relative overflow-hidden bg-gradient-to-br from-sky-50 via-white to-blue-50">
+        {/* Decorative blobs */}
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/10 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        {/* Grid pattern overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none"></div>
+        {/* Floating rings */}
+        <div className="absolute top-16 right-16 w-32 h-32 border-2 border-primary/15 rounded-full pointer-events-none"></div>
+        <div className="absolute top-24 right-24 w-16 h-16 border-2 border-secondary/20 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-10 left-20 w-20 h-20 border-2 border-primary/10 rounded-full pointer-events-none"></div>
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <div className="inline-block mb-4">
             <span className="text-secondary font-bold tracking-widest uppercase text-sm">Get in Touch</span>
             <div className="h-1 w-1/2 bg-secondary mt-1 rounded-full mx-auto"></div>

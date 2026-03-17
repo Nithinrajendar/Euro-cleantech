@@ -80,8 +80,21 @@ export default function Services() {
       </Helmet>
 
       {/* CUSTOM SECTION HEADER */}
-      <section className="pt-40 pb-20 bg-muted/30 border-b border-border/50">
-        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+      <section className="pt-40 pb-20 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50">
+        {/* Large blobs */}
+        <div className="absolute top-0 left-1/2 w-[600px] h-[300px] bg-primary/8 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[80px] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-primary/8 rounded-full blur-[80px] translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+        {/* Subtle diagonal lines */}
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#0000000a_1px,transparent_1px),linear-gradient(45deg,#0000000a_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
+        {/* Floating decorative shapes */}
+        <div className="absolute top-20 left-10 w-6 h-6 bg-secondary/30 rounded-full pointer-events-none"></div>
+        <div className="absolute top-32 left-24 w-3 h-3 bg-primary/30 rounded-full pointer-events-none"></div>
+        <div className="absolute top-16 right-10 w-8 h-8 bg-primary/20 rounded-full pointer-events-none"></div>
+        <div className="absolute top-40 right-20 w-4 h-4 bg-secondary/25 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-12 left-1/4 w-5 h-5 bg-primary/20 rotate-45 pointer-events-none"></div>
+        <div className="absolute bottom-16 right-1/4 w-4 h-4 bg-secondary/20 rotate-45 pointer-events-none"></div>
+        <div className="container mx-auto px-4 md:px-8 text-center max-w-4xl relative z-10">
           <div className="inline-block mb-4">
             <span className="text-secondary font-bold tracking-widest uppercase text-sm">Our Expertise</span>
             <div className="h-1 w-1/2 bg-secondary mt-1 rounded-full mx-auto"></div>

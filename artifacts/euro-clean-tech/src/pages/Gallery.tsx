@@ -28,8 +28,18 @@ export default function Gallery() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-20 bg-muted/30 border-b border-border/50 text-center">
-        <div className="container mx-auto px-4 md:px-8">
+      <section className="pt-40 pb-20 text-center relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-cyan-50">
+        {/* Blobs */}
+        <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-primary/10 rounded-full blur-[110px] translate-x-1/3 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-secondary/10 rounded-full blur-[90px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        {/* Dot pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle,#00000008_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none"></div>
+        {/* Decorative circles */}
+        <div className="absolute top-12 left-12 w-24 h-24 border border-primary/10 rounded-full pointer-events-none"></div>
+        <div className="absolute top-20 left-20 w-10 h-10 bg-secondary/10 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-12 right-16 w-40 h-40 border border-secondary/10 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-20 right-24 w-16 h-16 border border-primary/10 rounded-full pointer-events-none"></div>
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="inline-block mb-4">
             <span className="text-secondary font-bold tracking-widest uppercase text-sm">Visual Evidence</span>
             <div className="h-1 w-1/2 bg-secondary mt-1 rounded-full mx-auto"></div>

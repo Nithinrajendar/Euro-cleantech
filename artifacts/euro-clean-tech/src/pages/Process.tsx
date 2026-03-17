@@ -44,10 +44,21 @@ export default function Process() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="pt-40 pb-20 bg-primary text-white overflow-hidden relative">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-        </div>
+      <section className="pt-40 pb-24 text-white overflow-hidden relative bg-gradient-to-br from-[#0f2d5e] via-primary to-[#0f5e3a]">
+        {/* Mesh gradient blobs */}
+        <div className="absolute top-0 left-0 w-[500px] h-[400px] bg-white/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[100px] translate-x-1/3 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-1/2 w-[600px] h-[300px] bg-white/5 rounded-full blur-[80px] -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
+        {/* Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"></div>
+        {/* Corner accent shapes */}
+        <div className="absolute top-12 right-12 w-32 h-32 border border-white/10 rounded-3xl rotate-12 pointer-events-none"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 border border-secondary/20 rounded-2xl rotate-6 pointer-events-none"></div>
+        <div className="absolute bottom-20 left-12 w-24 h-24 border border-white/10 rounded-3xl -rotate-12 pointer-events-none"></div>
+        {/* Floating circles */}
+        <div className="absolute top-28 left-1/4 w-5 h-5 bg-white/15 rounded-full pointer-events-none"></div>
+        <div className="absolute top-16 left-1/3 w-3 h-3 bg-secondary/30 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-24 right-1/3 w-4 h-4 bg-white/10 rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-4 md:px-8 text-center relative z-10 max-w-4xl">
           <div className="inline-block px-4 py-1.5 bg-secondary text-white rounded-full text-sm font-bold tracking-wider mb-6">
             100% SCIENTIFIC

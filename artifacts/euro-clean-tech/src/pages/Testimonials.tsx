@@ -72,8 +72,29 @@ export default function Testimonials() {
       </Helmet>
 
       {/* Hero Quote */}
-      <section className="pt-40 pb-20 bg-primary text-white text-center">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="pt-40 pb-24 text-white text-center relative overflow-hidden bg-gradient-to-br from-[#1a3a6e] via-primary to-[#1a6e5a]">
+        {/* Radial glow centers */}
+        <div className="absolute top-0 left-1/2 w-[700px] h-[400px] bg-white/10 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-secondary/25 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white/5 rounded-full blur-[80px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        {/* Concentric rings */}
+        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] border border-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 w-[750px] h-[750px] border border-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 w-[1000px] h-[1000px] border border-white/[0.03] rounded-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+        {/* Floating dots */}
+        <div className="absolute top-20 left-16 w-3 h-3 bg-white/20 rounded-full pointer-events-none"></div>
+        <div className="absolute top-36 left-32 w-2 h-2 bg-secondary/40 rounded-full pointer-events-none"></div>
+        <div className="absolute top-24 right-20 w-4 h-4 bg-white/15 rounded-full pointer-events-none"></div>
+        <div className="absolute top-44 right-36 w-2 h-2 bg-secondary/30 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-16 left-1/4 w-3 h-3 bg-white/10 rounded-full pointer-events-none"></div>
+        <div className="absolute bottom-24 right-1/4 w-2 h-2 bg-secondary/25 rounded-full pointer-events-none"></div>
+        {/* Wave bottom */}
+        <div className="absolute bottom-0 left-0 right-0 translate-y-px pointer-events-none">
+          <svg viewBox="0 0 1440 80" className="w-full h-10 fill-current text-[#f8f9ff]" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"></path>
+          </svg>
+        </div>
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <Quote className="w-16 h-16 mx-auto mb-8 text-secondary opacity-80" />
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-8 leading-tight drop-shadow-sm">
             "The water feels so much cleaner and safer now."

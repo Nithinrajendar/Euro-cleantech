@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { CheckCircle2, ShieldCheck, Target, Heart, Award, Users } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Target, Heart, Award, Users, Droplets, BadgeCheck, Clock, MapPin } from "lucide-react";
 
 export default function About() {
   return (
@@ -49,25 +49,56 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right Illustration (CSS Only) */}
-            <div className="relative h-[500px] flex items-center justify-center">
-              <div className="absolute inset-0 bg-primary/5 rounded-[40px] transform rotate-3"></div>
-              <div className="absolute inset-0 bg-secondary/10 rounded-[40px] transform -rotate-3"></div>
+            {/* Right — Achievement Showcase */}
+            <div className="relative">
+              {/* Background accent */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/8 to-secondary/8 rounded-[48px] transform rotate-1"></div>
 
-              <div className="relative z-10 w-full h-full bg-white rounded-[40px] shadow-2xl border border-border/50 p-8 flex flex-col items-center justify-center overflow-hidden">
-                <div className="w-48 h-48 rounded-full bg-gradient-to-tr from-primary to-blue-300 relative mb-12 shadow-xl">
-                  <div className="absolute inset-[-80px] border border-primary/20 rounded-full"></div>
-
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transform translate-x-1/2 -translate-y-1/2">
-                    <Award className="w-8 h-8 text-secondary" />
+              <div className="relative bg-white rounded-[40px] shadow-2xl border border-border/30 p-8 overflow-hidden">
+                {/* Top ribbon */}
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full">
+                    <BadgeCheck className="w-5 h-5" />
+                    <span className="text-sm font-bold tracking-wide uppercase">ISO Certified Process</span>
                   </div>
-                  <div className="absolute bottom-0 left-0 w-16 h-16 bg-white rounded-2xl shadow-lg flex items-center justify-center transform -translate-x-1/2 translate-y-1/2">
-                    <ShieldCheck className="w-8 h-8 text-primary" />
+                  <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                    <Award className="w-5 h-5" />
+                    <span className="text-sm font-bold tracking-wide uppercase">Since 2010</span>
                   </div>
                 </div>
 
-                <h3 className="text-3xl font-display font-black text-center text-foreground mt-4">15+ Years of Excellence</h3>
-                <p className="text-center text-muted-foreground mt-2 font-medium">Trusted across Tamil Nadu</p>
+                {/* Big stat */}
+                <div className="bg-gradient-to-br from-primary to-blue-400 rounded-[28px] p-8 text-white mb-6 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                  <Droplets className="w-10 h-10 text-white/60 mb-4" />
+                  <div className="text-6xl font-black font-display leading-none">10,000+</div>
+                  <div className="text-white/80 font-semibold mt-2 text-lg">Tanks Cleaned & Certified</div>
+                </div>
+
+                {/* Stat grid */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {[
+                    { icon: <Clock className="w-5 h-5" />, value: "15+", label: "Years" },
+                    { icon: <Users className="w-5 h-5" />, value: "50+", label: "Experts" },
+                    { icon: <MapPin className="w-5 h-5" />, value: "4", label: "Cities" },
+                  ].map((stat, i) => (
+                    <div key={i} className="bg-muted/50 rounded-2xl p-4 text-center border border-border/40 hover:bg-white hover:shadow-md transition-all duration-200">
+                      <div className="text-primary flex justify-center mb-1">{stat.icon}</div>
+                      <div className="text-2xl font-black font-display text-foreground">{stat.value}</div>
+                      <div className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mt-0.5">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Trust line */}
+                <div className="flex items-center gap-3 bg-secondary/5 border border-secondary/20 rounded-2xl px-5 py-4">
+                  <ShieldCheck className="w-6 h-6 text-secondary shrink-0" />
+                  <div>
+                    <div className="font-bold text-foreground text-sm">100% Chemical-Free Guarantee</div>
+                    <div className="text-xs text-muted-foreground mt-0.5">Safe for families, children & pets</div>
+                  </div>
+                </div>
               </div>
             </div>
 
