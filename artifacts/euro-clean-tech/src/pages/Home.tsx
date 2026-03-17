@@ -58,91 +58,100 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Content - Improved Illustration */}
-            <div className="relative flex justify-center items-center h-[520px] mt-10 lg:mt-0">
+            {/* Right Content — Trust Dashboard */}
+            <div className="relative flex justify-center items-center mt-10 lg:mt-0">
+              <div className="w-full max-w-[460px]">
 
-              {/* Soft background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-teal-50 rounded-[48px]"></div>
+                {/* Main Card */}
+                <div className="bg-white rounded-[32px] shadow-2xl border border-slate-100 p-8 relative overflow-hidden">
+                  {/* Subtle background blobs */}
+                  <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, rgba(59,130,246,0.07) 0%, transparent 70%)" }}></div>
+                  <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full" style={{ background: "radial-gradient(circle, rgba(16,185,129,0.07) 0%, transparent 70%)" }}></div>
 
-              {/* Tank Card */}
-              <div className="relative z-10 w-64 md:w-72 h-80 md:h-[340px] rounded-[36px] bg-white border border-slate-200 shadow-2xl overflow-hidden flex flex-col justify-end">
+                  {/* Top row: Water Quality Ring */}
+                  <div className="flex items-center gap-6 mb-8">
+                    {/* SVG Ring */}
+                    <div className="relative shrink-0 w-28 h-28">
+                      <svg viewBox="0 0 120 120" className="w-full h-full -rotate-90">
+                        <circle cx="60" cy="60" r="50" fill="none" stroke="#f1f5f9" strokeWidth="10" />
+                        <circle
+                          cx="60" cy="60" r="50" fill="none"
+                          stroke="url(#qualityGrad)" strokeWidth="10"
+                          strokeLinecap="round"
+                          strokeDasharray="314"
+                          strokeDashoffset="5"
+                        />
+                        <defs>
+                          <linearGradient id="qualityGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#3b82f6" />
+                            <stop offset="100%" stopColor="#10b981" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center">
+                        <span className="text-2xl font-black text-slate-800 leading-none">99%</span>
+                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wide mt-0.5">Pure</span>
+                      </div>
+                    </div>
 
-                {/* Upper tank wall — light */}
-                <div className="absolute inset-0 bg-white"></div>
+                    <div>
+                      <div className="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Water Quality Score</div>
+                      <h3 className="text-2xl font-black text-slate-800 leading-tight mb-2">Bacteria-Free<br/>Guaranteed</h3>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                        ))}
+                        <span className="text-xs font-bold text-slate-500 ml-1 self-center">5.0</span>
+                      </div>
+                    </div>
+                  </div>
 
-                {/* Water fill — blue to teal gradient */}
-                <div className="relative w-full h-[62%] z-10 overflow-hidden">
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background: "linear-gradient(180deg, #3b9eda 0%, #38bcd4 40%, #2ec4a9 75%, #29b89a 100%)"
-                    }}
-                  >
-                    {/* Water surface shimmer */}
-                    <div className="absolute top-0 left-0 right-0 h-3 bg-white/20" style={{ borderRadius: "50% 50% 0 0 / 100% 100% 0 0" }}></div>
-                    <div className="absolute top-3 left-6 right-6 h-1 bg-white/10 rounded-full blur-sm"></div>
+                  {/* Divider */}
+                  <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-6"></div>
 
-                    {/* Glow from probe tip */}
-                    <div
-                      className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-16 rounded-full"
-                      style={{
-                        background: "radial-gradient(ellipse at center, rgba(100,180,255,0.55) 0%, transparent 70%)"
-                      }}
-                    ></div>
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-4 mb-6">
+                    {[
+                      { value: "10k+", label: "Tanks Cleaned", color: "text-primary" },
+                      { value: "15+", label: "Years Exp.", color: "text-secondary" },
+                      { value: "4", label: "Cities Served", color: "text-amber-500" },
+                    ].map((s, i) => (
+                      <div key={i} className="text-center bg-slate-50 rounded-2xl py-4 px-2">
+                        <div className={`text-2xl font-black ${s.color} mb-0.5`}>{s.value}</div>
+                        <div className="text-[11px] text-slate-500 font-semibold leading-tight">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Feature Pills */}
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { label: "No Chemicals", icon: <CheckCircle2 className="w-4 h-4 text-green-500" /> },
+                      { label: "UV Sterilized", icon: <ShieldCheck className="w-4 h-4 text-blue-500" /> },
+                      { label: "ISO Certified", icon: <Star className="w-4 h-4 text-amber-500 fill-amber-400" /> },
+                      { label: "24/7 Support", icon: <Clock className="w-4 h-4 text-violet-500" /> },
+                    ].map((pill, i) => (
+                      <div key={i} className="flex items-center gap-1.5 bg-white border border-slate-200 rounded-full px-3 py-1.5 shadow-sm">
+                        {pill.icon}
+                        <span className="text-xs font-bold text-slate-700">{pill.label}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Cleaning Probe — dark rod with green cap + blue tip */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-20" style={{ top: "-8px" }}>
-                  {/* Green cap */}
-                  <div
-                    className="w-10 h-5 rounded-t-2xl rounded-b-md"
-                    style={{ background: "linear-gradient(180deg, #34d399 0%, #059669 100%)" }}
-                  ></div>
-                  {/* Dark rod */}
-                  <div
-                    className="w-3 rounded-sm"
-                    style={{
-                      height: "200px",
-                      background: "linear-gradient(180deg, #1e293b 0%, #334155 60%, #1e3a5f 100%)"
-                    }}
-                  ></div>
-                  {/* Blue glowing tip / bulb */}
-                  <div
-                    className="w-6 h-6 rounded-full -mt-1 relative"
-                    style={{
-                      background: "radial-gradient(circle at 35% 35%, #93c5fd 0%, #3b82f6 50%, #1d4ed8 100%)",
-                      boxShadow: "0 0 14px 6px rgba(59,130,246,0.5)"
-                    }}
-                  ></div>
+                {/* Bottom floating review card */}
+                <div className="mt-4 ml-6 bg-white rounded-2xl shadow-xl border border-slate-100 px-5 py-4 flex items-center gap-4">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-black text-lg shrink-0">R</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex gap-0.5 mb-0.5">
+                      {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />)}
+                    </div>
+                    <p className="text-xs text-slate-600 font-medium truncate">"Spotless tank, UV process was excellent!"</p>
+                    <span className="text-[10px] text-slate-400 font-semibold">Ramesh K. · Coimbatore</span>
+                  </div>
                 </div>
 
               </div>
-
-              {/* Badge — No Chemicals (top-left) */}
-              <div className="absolute top-8 left-0 md:-left-6 z-20 px-4 py-3 rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-slate-100 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-green-50 border border-green-200 flex items-center justify-center">
-                  <CheckCircle2 className="w-5 h-5 text-green-500" />
-                </div>
-                <span className="font-bold text-slate-800 text-sm">No Chemicals</span>
-              </div>
-
-              {/* Badge — ISO Certified (top-right) */}
-              <div className="absolute top-2 right-0 md:-right-6 z-20 px-4 py-3 rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-slate-100 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-amber-50 border border-amber-200 flex items-center justify-center">
-                  <Star className="w-5 h-5 text-amber-500 fill-amber-400" />
-                </div>
-                <span className="font-bold text-slate-800 text-sm">ISO Certified</span>
-              </div>
-
-              {/* Badge — UV Sterilized (bottom-right) */}
-              <div className="absolute bottom-16 right-0 md:-right-6 z-20 px-4 py-3 rounded-2xl bg-white shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-slate-100 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center">
-                  <ShieldCheck className="w-5 h-5 text-blue-500" />
-                </div>
-                <span className="font-bold text-slate-800 text-sm">UV Sterilized</span>
-              </div>
-
             </div>
           </div>
         </div>
